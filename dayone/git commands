@@ -1,0 +1,178 @@
+**********Checking git version******************
+$ git --version
+git version 2.35.1.windows.2
+
+************Config the git username and email with local repository
+$ git config --global user.name "prabhat1510"
+
+
+$ git config --global user.email "prabhatc@gmail.com"
+
+
+
+$ mkdir helloWorld
+
+
+$ cd helloWorld/
+
+****************initialized the folder helloWorld with git so that it will be a local repository**********
+$ git init
+Initialized empty Git repository in C:/Users/UD SYSTEMS/helloWorld/.git/
+
+
+**************ls command is list the content of the directory********************
+
+
+$ ls
+HelloWorld.java
+
+
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        HelloWorld.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+*************Add single file*****************
+$ git add HelloWorld.java
+
+
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   HelloWorld.java
+
+
+
+$ git commit -m "My First release of HelloWorld"
+[master (root-commit) 867fd9d] My First release of HelloWorld
+ 1 file changed, 10 insertions(+)
+ create mode 100644 HelloWorld.java
+
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+$ git push origin
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+
+
+$ git push --set-upstream origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+**************First time adding the local repository(origin) to remote repository(github repo) both name should be same *******************
+$ git remote add origin https://github.com/prabhat1510/helloWorld.git
+
+
+$ git push --set-upstream origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 355 bytes | 355.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/prabhat1510/helloWorld/pull/new/master
+remote:
+To https://github.com/prabhat1510/helloWorld.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+************Check the status of the current branch *********************
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   HelloWorld.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        HelloWorld.java.bak
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+******************* Add more than one file***********************
+$ git add --all
+
+************Check the status of the current branch *********************
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   HelloWorld.java
+        new file:   HelloWorld.java.bak
+
+
+************Commit the file *********************
+$ git commit -m "Changes done to HelloWorld"
+[master 613816e] Changes done to HelloWorld
+ 2 files changed, 13 insertions(+)
+ create mode 100644 HelloWorld.java.bak
+
+***********Push the local changes to remote repository**********
+$ git push --set-upstream origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 385 bytes | 385.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/prabhat1510/helloWorld.git
+   867fd9d..613816e  master -> master
+branch 'master' set up to track 'origin/master'.
+
+
+************Delete a file from local repository************
+$ git rm HelloWorld.java.bak
+rm 'HelloWorld.java.bak'
+
+************Commit the deteleted file *********************
+$ git commit -m "Deleted the bak file"
+[master 8512a10] Deleted the bak file
+ 1 file changed, 10 deletions(-)
+ delete mode 100644 HelloWorld.java.bak
+
+***********Push the local changes to remote repository**********
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (2/2), 242 bytes | 242.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/prabhat1510/helloWorld.git
+   613816e..8512a10  master -> master
+
+***********Present working directory****************
+$ pwd
+/c/Users/UD SYSTEMS/helloWorld
+
+
+$
