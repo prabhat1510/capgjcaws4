@@ -146,7 +146,7 @@ public class ListDemo {
 		for(int i=0;i<aDNum.length;i++) {
 			System.out.println(aDNum[i]);
 		}
-		
+		//stackOfDBNum.forEach(null);//We will do it when we cover Lamdba expression and method reference,functional interface
 		
 	}
 	
