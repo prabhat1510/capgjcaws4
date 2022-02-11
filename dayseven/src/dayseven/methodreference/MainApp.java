@@ -44,6 +44,10 @@ public class MainApp {
 		DisplayInformation displayInfo = order1::displayAmount;
 		displayInfo.display();
 		
+		//Reference to constructor
+		OrderAmount orderAmount = Order::new;
+		System.out.println(orderAmount.getOrderAmount(1111000.15));
+				
 		
 	}
 	

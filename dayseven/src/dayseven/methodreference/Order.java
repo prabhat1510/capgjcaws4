@@ -4,6 +4,11 @@ public class Order {
 	
 	private String currency;
 	private double amount;
+	
+	
+	public Order(double amount) {
+		this.amount = amount;
+	}
 	public Order(String currency, double amount) {
 		this.currency = currency;
 		this.amount = amount;
