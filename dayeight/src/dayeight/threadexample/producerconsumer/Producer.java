@@ -8,7 +8,7 @@ public class Producer extends Thread{
 	}
 
 	public void run() {
-		for(int i=0;i<14;i++) {
+		for(int i=0;i<11;i++) {
 		factory.put(i);
 		}
 	}
