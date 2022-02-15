@@ -3,6 +3,7 @@ package layeredarchitecture.presentation;
 import java.util.Scanner;
 
 import layeredarchitecture.dto.Customer;
+import layeredarchitecture.exceptions.ProductNotFoundException;
 import layeredarchitecture.service.CustomerService;
 import layeredarchitecture.service.CustomerServiceImpl;
 import layeredarchitecture.service.ProductService;
@@ -31,8 +32,15 @@ public class UIClass {
 		}
 		
 	ProductService productService = new ProductServiceImpl();
-	String message = productService.updateProductQunatity(1, 5);
-	System.out.println(message);
+	String message;
+	try {
+		message = productService.updateProductQunatity(15, 5);
+		System.out.println(message);
+	} catch (ProductNotFoundException e) {
+		// TODO Auto-generated catch block
+		System.out.println(e.getMessage());
+	}
+	
 
 	}
 

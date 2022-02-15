@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import layeredarchitecture.dto.Product;
+import layeredarchitecture.exceptions.ProductNotFoundException;
 
 public class ProductDAOImpl implements ProductDAO {
 		List<Product> productList = new ArrayList<Product>();
 	@Override
-	public String updateProductQunatity(Integer productId,Integer quantity) {
+	public String updateProductQunatity(Integer productId,Integer quantity) throws ProductNotFoundException {
 		Product product = getProductByID(productId);
 		Integer updatedQuantity =product.getQuantity() -quantity; 
 		if(product != null) {
@@ -35,11 +36,13 @@ public class ProductDAOImpl implements ProductDAO {
 
 
 	@Override
-	public Product getProductByID(Integer productId) {
+	public Product getProductByID(Integer productId) throws ProductNotFoundException {
 		addProductToList();
 		for(Product product: productList) {
 			if(productId == product.getProductId()) {
 				return product;
+			}else {
+				throw new ProductNotFoundException("Product not found in database");
 			}
 		}
 		return null;
