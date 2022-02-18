@@ -16,8 +16,8 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public List<Customer> getAllCustomers() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return customerDAO.getAllCustomers();
 	}
 
 	@Override
@@ -28,13 +28,23 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public Integer updateCustomer(Customer customer) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return customerDAO.updateCustomer(customer);
 	}
 
 	@Override
 	public Integer deleteCustomer(Integer customerId) {
-		// TODO Auto-generated method stub
+		
+		return customerDAO.deleteCustomer(customerId);
+	}
+
+	@Override
+	public Integer restrictedDeleteCustomer(Integer customerId, boolean accessible) {
+		if(accessible) {
+			customerDAO.deleteCustomer(customerId);
+		}else {
+			System.out.println("delete customer is not accessible from CustomerService Impl class");
+		}
 		return null;
 	}
 

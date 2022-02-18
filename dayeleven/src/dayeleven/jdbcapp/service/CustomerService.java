@@ -15,4 +15,6 @@ public interface CustomerService {
 		public Integer updateCustomer(Customer customer);
 		//Delete
 		public Integer deleteCustomer(Integer customerId);
+		
+		public Integer restrictedDeleteCustomer(Integer customerId,boolean accessible);
 }
