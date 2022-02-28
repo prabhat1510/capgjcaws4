@@ -1,5 +1,7 @@
 package jpawithgradle.dao;
 
+import java.util.List;
+
 import jpawithgradle.data.Employee;
 
 public interface EmployeeDAO {
@@ -12,5 +14,9 @@ public interface EmployeeDAO {
 
 	// Delete data
 	public void deleteEmployee(Employee employee);
+	
+	public List<Employee> getAllEmployee();
+	
+	public Employee getEmployeeByName(String empName);
 
 }

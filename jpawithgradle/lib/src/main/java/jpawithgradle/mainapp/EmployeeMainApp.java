@@ -8,6 +8,7 @@ public class EmployeeMainApp {
 
 	public static void main(String[] args) {
 		EmployeeService employeeService = new EmployeeServiceImpl();
+		/**
 		Employee employee = employeeService.getEmployee(7);
 		System.out.println(employee);
 		
@@ -18,7 +19,8 @@ public class EmployeeMainApp {
 		//employeeService.addEmployee(emp);
 		//Delete an entity instance
 		employeeService.deleteEmployee(emp);
-		
+		**/
+		System.out.println(employeeService.getAllEmployee());
 
 	}
 

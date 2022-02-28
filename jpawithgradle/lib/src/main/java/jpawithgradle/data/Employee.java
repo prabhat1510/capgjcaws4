@@ -3,6 +3,7 @@ package jpawithgradle.data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -18,6 +19,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "employee_master")
+@NamedQuery(name="Employee.findByName",query="select emp from Employee emp where emp.empName LIKE :empName")
 public class Employee {
 	@Id
 	@Column(name = "emp_id")

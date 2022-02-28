@@ -1,5 +1,7 @@
 package jpawithgradle.service;
 
+import java.util.List;
+
 import jpawithgradle.data.Employee;
 
 public interface EmployeeService {
@@ -10,4 +12,8 @@ public interface EmployeeService {
 	
 	//Delete data
 	public void deleteEmployee(Employee employee);
+	
+	public List<Employee> getAllEmployee();
+	
+	public Employee getEmployeeByName(String empName);
 }

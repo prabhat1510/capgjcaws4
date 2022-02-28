@@ -1,5 +1,7 @@
 package jpawithgradle.service;
 
+import java.util.List;
+
 import jpawithgradle.dao.EmployeeDAO;
 import jpawithgradle.dao.EmployeeDAOImpl;
 import jpawithgradle.data.Employee;
@@ -22,6 +24,19 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public void deleteEmployee(Employee employee) {
 		employeeDAO.deleteEmployee(employee);
 
+	}
+
+	@Override
+	public List<Employee> getAllEmployee() {
+		// TODO Auto-generated method stub
+		return employeeDAO.getAllEmployee();
+	}
+
+
+	@Override
+	public Employee getEmployeeByName(String empName) {
+		// TODO Auto-generated method stub
+		return employeeDAO.getEmployeeByName(empName);
 	}
 
 }
