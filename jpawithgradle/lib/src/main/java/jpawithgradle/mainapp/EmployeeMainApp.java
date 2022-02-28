@@ -21,6 +21,7 @@ public class EmployeeMainApp {
 		employeeService.deleteEmployee(emp);
 		**/
 		System.out.println(employeeService.getAllEmployee());
+		System.out.println(employeeService.getEmployeeByName("Anjali Kumari"));
 
 	}
 

@@ -61,7 +61,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		//select * from employee where empName="" --- sql statement
 		Query query = em.createNamedQuery("Employee.findByName");
 		query.setParameter("empName", empName);
-		return null;
+		
+		return (Employee) query.getSingleResult();
 	}
 	
 	
