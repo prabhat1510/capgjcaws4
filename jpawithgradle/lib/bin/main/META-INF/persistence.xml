@@ -3,6 +3,7 @@
 	<persistence-unit name="jpawithgradle">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>jpawithgradle.data.Employee</class>
+		<class>jpawithgradle.data.Book</class>
 		<!-- <class>jpawithgradle.data.Department</class> -->
 		<!--<class>jpawithgradle.data.Location</class> -->
 
