@@ -21,7 +21,7 @@ public class StudentBi {
 	private String name;
 	//Student class has an Address - HAS A relationship
 	//One to one uni
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.ALL) //owning side
 	private AddressBi addressBi;
 
 	public Integer getStudentId() {

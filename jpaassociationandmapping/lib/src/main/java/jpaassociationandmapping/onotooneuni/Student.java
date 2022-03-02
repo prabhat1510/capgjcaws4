@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -16,7 +17,8 @@ public class Student {
 	//Student class has an Address - HAS A relationship
 	//One to one uni
 	@OneToOne(cascade=CascadeType.ALL)
-	private Address address;
+	//@JoinColumn(name="addressId")
+	private Address address;//Address type property address is written here
 
 	public Integer getStudentId() {
 		return studentId;

@@ -17,7 +17,7 @@ public class AddressBi {
 	private String city;
 	private String state;
 	private String zipCode;
-	@OneToOne(mappedBy="addressBi")
+	@OneToOne(mappedBy="addressBi") //inverse side
 	private StudentBi studentBi;
 	
 	public Integer getAddressId() {
