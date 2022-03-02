@@ -39,4 +39,34 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDAO.getEmployeeByName(empName);
 	}
 
+	@Override
+	public void deleteEmployeeById(Integer empId) {
+		employeeDAO.deleteEmployeeById(empId);;
+		
+	}
+
+	@Override
+	public void updateEmployee(Employee employee) {
+	employeeDAO.updateEmployee(employee);
+		
+	}
+
+	@Override
+	public void updateEmployee(int id, String name) {
+		employeeDAO.updateEmployee(id,name);
+		
+	}
+
+	@Override
+	public Employee getEmployeeUsingTypedQuery(Integer empId) {
+		// TODO Auto-generated method stub
+		return employeeDAO.getEmployeeUsingTypedQuery(empId);
+	}
+
+	@Override
+	public List<Employee> getEmployeesUsingTypedQuery() {
+		// TODO Auto-generated method stub
+		return employeeDAO.getEmployeesUsingTypedQuery();
+	}
+
 }
