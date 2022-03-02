@@ -56,7 +56,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [empNo=" + empNo + ", empName=" + empName + ", hireDate=" + hireDate + ", department="
+		return "EmployeeSTC [empNo=" + empNo + ", empName=" + empName + ", hireDate=" + hireDate + ", department="
 				+ department + "]";
 	}
 

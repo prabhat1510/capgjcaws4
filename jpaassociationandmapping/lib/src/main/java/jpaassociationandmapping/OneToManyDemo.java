@@ -19,12 +19,12 @@ public class OneToManyDemo {
 		Department department = new Department();
 		department.setDeptName("MARKETING");
 		department.setLocation("NEW DELHI");
-		Employee emp1 = new Employee();
+		EmployeeSTC emp1 = new EmployeeSTC();
 		emp1.setDepartment(department);
 		emp1.setEmpName("Amisha Patel");
 		emp1.setHireDate(new Date());
 		
-		Employee emp2 = new Employee();
+		EmployeeSTC emp2 = new EmployeeSTC();
 		emp2.setDepartment(department);
 		emp2.setEmpName("Krutika");
 		emp2.setHireDate(new Date());
