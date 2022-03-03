@@ -15,9 +15,11 @@ public class PopupGreeter implements Greeter {
 	public Visitor getVisitor() {
 		return visitor;
 	}
-
-	@Autowired
-	@Qualifier("jerseyVisitor") //This is used for setter based DI
+	//Using @Autowired annotation you are inject the object dependency implicitly
+	//Five different auto wiring modes - No autowiring, byName,byType,constructor,autodetect
+	@Autowired 
+	@Qualifier("jerseyVisitor") 
+	//This is used for setter based DI
 	public void setVisitor(Visitor visitor) {
 		System.out.println("visitor set to " + visitor);
 		this.visitor = visitor;
