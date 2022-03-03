@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.lm.Address">
+		<property name="city" value="Vadodara" />
+		<property name="state" value="Gujraat" />
+	</bean>
+	<bean name="employee" class="com.lm.Employee" autowire="byType">
+		<property name="empName" value="Narendra Modi" />
+	</bean>
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="address" class="com.lm.Address">
+		<property name="city" value="Varanasi" />
+		<property name="state" value="Uttar Pradesh" />
+	</bean>
+	<bean id="employee" class="com.lm.Employee">
+		<constructor-arg name="address" ref="address" />
+		<constructor-arg name="empName" value="Manohar Parikar" />
+	</bean>
+</beans>

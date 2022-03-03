@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="order" class="com.lm.Order">
+		<property name="item" value="Pen" />
+		<property name="price" value="$ 22.50" />
+		<property name="address" value="Bangalore" />
+	</bean>
+	
+	<bean id="paymentGwBean" class="com.lm.PaymentGateway">
+		<constructor-arg ref="order" />
+	</bean>
+</beans>

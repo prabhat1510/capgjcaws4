@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+                           
+	<bean id="vis" class="com.fidelity.greeter.AmarilloVisitor">
+		<property name="name" value="Billy Bob Springstein"/>
+	</bean>
+	
+	<bean id="greeter" class="com.fidelity.greeter.PopupGreeter">
+		<property name="visitor" ref="vis"/>
+	</bean>
+
+	<!-- <bean id="jerseyvis" class="com.fidelity.greeter.JerseyVisitor">
+		<property name="name" value="Bruce Springstein"/>
+		<property name="greeting" value="Born to Run"></property>
+	</bean> -->
+	
+</beans>

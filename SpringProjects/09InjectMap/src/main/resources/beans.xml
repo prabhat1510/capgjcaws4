@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+    <bean id="filmDirectors" class="com.lm.FilmDirectors">
+        <property name="directorMap">
+            <map>
+                <entry key="1" value="Alfred Hitchcock" />
+                <entry key="2" value="Steven Spielberg" />
+                <entry key="3" value="Martin Scorsese" />
+            </map>
+      </property>
+      <property name="directorList">
+            <list>
+                <value>Steven Spielberg</value>
+                <value>Martin Scorsese</value>
+                <value>Alfred Hitchcock</value>
+            </list>
+      </property>
+      <property name="message" value="using collections"></property>
+    </bean>
+</beans>
