@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Employee {
 	private String empName;
 	private Address address;
-	@Autowired
+	//@Autowired
 	public Employee (Address address, String empName) {
 		this.address = address;
 		this.empName = empName;
