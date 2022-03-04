@@ -53,4 +53,15 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return empList;
 	}
 
+	@Override
+	public Boolean addEmployee(Employee employee) {
+		List<Employee> empList = new ArrayList<Employee>();
+		if(employee.getEmpId() >1) {
+			empList.add(employee);
+		}else {
+			return false;
+		}
+		return true;
+	}
+
 }
