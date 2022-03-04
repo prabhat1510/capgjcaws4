@@ -7,7 +7,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -95,10 +97,9 @@ public class EmployeeController {
 
 	// Below Method receives data from URL as parameter in the form key value pair
 	// http://localhost:8080/addEmployee?id=21&name=Jyotika
-	//http://localhost:8080/addEmployee?query string parameters
+	// http://localhost:8080/addEmployee?query string parameters
 	@GetMapping("/addEmployee")
-	public ModelAndView addEmployeeReceiveDataUsingRequestParam(@RequestParam(value = "id")
-	Integer empId,
+	public ModelAndView addEmployeeReceiveDataUsingRequestParam(@RequestParam(value = "id") Integer empId,
 			@RequestParam(value = "name") String empName) {
 		// Created an employee object- by calling or invoking the Employee()
 		Employee employee = new Employee();
@@ -118,4 +119,29 @@ public class EmployeeController {
 		}
 		return modelAndView;
 	}
+
+	// URL- http://localhost:8080/employee
+	@GetMapping("/employee")
+	public ModelAndView getEmployeeForm(@ModelAttribute Employee employee) {
+		ModelAndView modelAndView = new ModelAndView("addemployee");
+		return modelAndView;
+	}
+
+	//RequestMapping(value="/saveEmployee",method=RequestMethod.POST)
+	@PostMapping("/saveEmployee")
+	public ModelAndView saveEmployee(@ModelAttribute Employee employee){
+		Boolean isEmployeeAdded = employService.addEmployee(employee);
+		ModelAndView modelAndView;
+		// Model in Spring Web MVC is a map
+		Map messageModel = new HashMap();
+		if (isEmployeeAdded) {
+			messageModel.put("emplData", employee);
+			modelAndView = new ModelAndView("successWithData", messageModel);
+		} else {
+			messageModel.put("errormsg", "Unable to add employee");
+			modelAndView = new ModelAndView("errorMsg", messageModel);
+		}
+		return modelAndView;
+	}
+
 }
