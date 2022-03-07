@@ -5,6 +5,7 @@
 <title>Employee Form</title>
 </head>
 <body>
+<!-- we use *  to POST data and  $ to GET data i.e. *{varName} & i${varName}  -->
 	<form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="post">
 		<p>Emp Id : <input type="text" th:field="*{empId}"/></p>
 		<p>Emp Name : <input type="text" th:field="*{empName}"/></p>
