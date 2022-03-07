@@ -119,7 +119,17 @@ public class EmployeeController {
 	  //@PutMapping("/updateemployee")
 	  @PostMapping("/updateemployee")
 	  public ModelAndView updateEmployee(Employee employee){ 
-		  return modelAndView; 
+		  Integer res = -1;
+			Map model = new HashMap<>();
+			res = employeeService.updateEmployee(employee);
+			if(res!=-1) {
+				model.put("message", "Employee Updation Success");
+				return new ModelAndView("message",model);
+			}else {
+				model.put("message", "Employee Updation Failure");
+				return new ModelAndView("message",model);
+			}
+
 	  }
 	 
 	
