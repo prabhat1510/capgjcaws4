@@ -18,4 +18,5 @@ public interface EmployeeService {
 	
 	//Update
 	public Boolean updateEmployee(Employee employee);
+	public Employee getEmployeeByName(String empName);
 }

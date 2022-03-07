@@ -113,9 +113,26 @@ public class EmployeeController {
 			return new ModelAndView("nodatafound", model);
 		}
 	}
-	/**
-	 * //Update ---
-	 * RequestMapping(value="/updateemployee",method=RequestMethod.POST) @PostMapping("/updateemployee")
-	 * public ModelAndView updateEmployee(Employee employee){ return modelAndView; }
-	 **/
+	
+	  //Update ---
+	  //RequestMapping(value="/updateemployee",method=RequestMethod.POST) 
+	  //@PutMapping("/updateemployee")
+	  @PostMapping("/updateemployee")
+	  public ModelAndView updateEmployee(Employee employee){ 
+		  return modelAndView; 
+	  }
+	 
+	
+	@GetMapping("/employeeByName")
+	public ModelAndView getEmployeeByName(@RequestParam(value="eName") String empName) {
+		Employee employee = employeeService.getEmployeeByName(empName);
+		Map employeeModel = new HashMap();
+		if (employee != null) {
+			employeeModel.put("employee", employee);
+			return new ModelAndView("employeedetails", employeeModel);
+		} else {
+			employeeModel.put("message", "No employees found");
+			return new ModelAndView("nodatafound", employeeModel);
+		}
+	}
 }

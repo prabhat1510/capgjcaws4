@@ -1,6 +1,8 @@
 package com.springmvcdatajpaapp.dao;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import com.springmvcdatajpaapp.model.Employee;
 /**
@@ -13,4 +15,6 @@ import com.springmvcdatajpaapp.model.Employee;
 
 public interface EmployeeRepository extends CrudRepository<Employee,Integer> {
 
+	@Query("FROM Employee e where e.empName=:eName")
+	Employee findEmployeeByName(@Param("eName") String empName);
 }
