@@ -24,6 +24,6 @@ public class EmployeeNotFoundException extends Exception{
 		// TODO Auto-generated constructor stub
 	}
 	public EmployeeNotFoundException(Long id) {
-		// TODO Auto-generated constructor stub
+		super("Could not find employee "+id);
 	}
 }
