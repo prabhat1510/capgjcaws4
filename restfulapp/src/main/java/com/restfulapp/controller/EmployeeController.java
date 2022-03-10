@@ -40,18 +40,14 @@ public class EmployeeController {
   // Single item
   
   @GetMapping("/employees/{id}")
-  Employee one(@PathVariable Long id) {
+  Employee one(@PathVariable Long id) throws EmployeeNotFoundException {
    /** 
     return repository.findById(id)
       .orElseThrow(() -> new EmployeeNotFoundException(id));
      **/
-	  try {
+	 
 		return employeeService.one(id);
-	} catch (EmployeeNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	  return null;
+
   }
 
   @PutMapping("/employees/{id}")
@@ -69,10 +65,10 @@ public class EmployeeController {
       });**/
 	  return employeeService.replaceEmployee(newEmployee,id);
   }
-
-  @DeleteMapping("/employees/{id}")
+@DeleteMapping("/employees/{id}")
   void deleteEmployee(@PathVariable Long id) {
     //repository.deleteById(id);
 	  employeeService.deleteEmployee(id);
   }
 }
+//Custom query retrieve - data by name by role 
