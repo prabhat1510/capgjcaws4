@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-pod
+ labels:
+   environment: staging
+   team: kube-team
+ annotations:
+   imageregistry: "https://hub.docker.com/"
+spec:
+ containers:
+   - name: my-container
+     image: nginx
+     

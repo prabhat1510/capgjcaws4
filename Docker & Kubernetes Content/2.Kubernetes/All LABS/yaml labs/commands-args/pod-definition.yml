@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod
+spec:
+  containers:
+    - image: busybox
+      name: demo-container
+      command: ["echo"]
+      args: ["This is a container for demo command"]
+  restartPolicy: Never
+
+
+  
